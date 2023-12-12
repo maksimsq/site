@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Обчислення площі кола, діаметра та довжини кола</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script language="javascript">
+        function rez(radius) {
+            var diameter = 2 * radius.value;
+            var area = Math.PI * Math.pow(radius.value, 2);
+            var circumference = 2 * Math.PI * radius.value;
+
+            form1.diameterOutput.value = diameter.toFixed(2);
+            form1.areaOutput.value = area.toFixed(2);
+            form1.circumferenceOutput.value = circumference.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <p><b>Обчислення площі кола, діаметра та довжини кола</b></p>
+    <form name="form1">
+        <fieldset style="width: 40%">
+            <legend>Введення даних</legend>
+            Радіус: <input type="text" size="7" name="radius">
+        </fieldset>
+        <fieldset style="width: 40%">
+            <legend>Обробка та виведення даних</legend>
+            Діаметр: <input type="text" size="7" name="diameterOutput" readonly> <br>
+            Площа: <input type="text" size="7" name="areaOutput" readonly> <br>
+            Довжина кола: <input type="text" size="7" name="circumferenceOutput" readonly> <br>
+            <input type="button" value="Обчислити" style="margin:10px" onClick="rez(form1.radius)">
+        </fieldset>
+    </form>
+
+    <img id="circle" src="circle.png" alt="Circle Image">
+    <style>
+         body {
+            text-align: center;
+        }
+
+        #circleImage {
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</body>
+</html>
